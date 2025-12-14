@@ -9,36 +9,39 @@
         <div class="row">
             <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
                 <div class="contact-info-wrap">
-                    <h2>Get in touch</h2>
+                    <h2>Connect With Us</h2>
 
                     <div class="contact-image-wrap d-flex flex-wrap">
                         <img src="{% static 'images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg' %}" class="img-fluid avatar-image" alt="">
 
                         <div class="d-flex flex-column justify-content-center ms-3">
-                            <p class="mb-0">Clara Barton</p>
-                            <p class="mb-0"><strong>HR & Office Manager</strong></p>
+                            <p class="mb-0">GTSU Team</p>
+                            <p class="mb-0"><strong>Global Tibetan Student Union</strong></p>
                         </div>
                     </div>
 
                     <div class="contact-info">
-                        <h5 class="mb-3">Contact Information</h5>
+                        <h5 class="mb-3">Reach Out To Us</h5>
 
-                        <p class="d-flex mb-2">
-                            <i class="bi-geo-alt me-2"></i>
-                            Akershusstranda 20, 0150 Oslo, Norway
+                        <p class="mb-3">
+                            <i class="bi-info-circle me-2"></i>
+                            Questions about college admissions?
                         </p>
 
-                        <p class="d-flex mb-2">
-                            <i class="bi-telephone me-2"></i>
-                            <a href="tel: 120-240-9600">120-240-9600</a>
+                        <p class="mb-3">
+                            <i class="bi-mortarboard me-2"></i>
+                            Need career guidance?
+                        </p>
+
+                        <p class="mb-3">
+                            <i class="bi-people me-2"></i>
+                            Want to connect with mentors?
                         </p>
 
                         <p class="d-flex">
                             <i class="bi-envelope me-2"></i>
-                            <a href="mailto:donate@charity.org">donate@charity.org</a>
+                            <a href="mailto:gtsu2016@gmail.com">gtsu2016@gmail.com</a>
                         </p>
-
-                        <a href="#" class="custom-btn btn mt-3">Get Direction</a>
                     </div>
                 </div>
             </div>
@@ -46,10 +49,13 @@
             <div class="col-lg-5 col-12 mx-auto">
                 <form class="custom-form contact-form" action="/contact/" method="post" role="form">
                     {% csrf_token %}
-                    <h2>Contact form</h2>
+                    <h2>Send Us a Message</h2>
 
-                    <p class="mb-4">Or, you can just send an email:
-                        <a href="mailto:info@charity.org">info@charity.org</a>
+                    <p class="mb-4">We're here to help! Whether you need guidance on college admissions, career advice, or just want to learn more about GTSU, feel free to reach out.
+                    </p>
+                    
+                    <p class="mb-4">Email us directly at:
+                        <a href="mailto:gtsu2016@gmail.com">gtsu2016@gmail.com</a>
                     </p>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-12">
