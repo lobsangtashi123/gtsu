@@ -24,9 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-))-r(6i&g!4yzni#714ce#41oo!f$mx2w&#6o&4e6ep3ubphr_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['lobsang208lt.pythonanywhere.com', 'localhost', '127.0.0.1']
+
+# CSRF Trusted Origins for PythonAnywhere
+CSRF_TRUSTED_ORIGINS = ['https://lobsang208lt.pythonanywhere.com']
 
 
 # Application definition
