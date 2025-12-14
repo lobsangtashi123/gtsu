@@ -1,0 +1,17 @@
+/* Login page logo */
+.login-logo img {
+    height: 150px !important;
+    width: auto !important;
+    max-width: 150px !important;
+}
+
+/* Sidebar logo */
+.brand-link .brand-image,
+.navbar-brand img {
+    height: 50px !important;
+    width: auto !important;
+    max-width: 50px !important;
+    margin-left: 0.8rem;
+    margin-right: 0.5rem;
+    margin-top: -3px;
+}

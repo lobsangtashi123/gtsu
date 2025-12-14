@@ -1,0 +1,25 @@
+.navbar-brand img {
+    height: 120px !important;
+    width: auto !important;
+    max-width: 120px !important;
+}
+
+.login-logo img {
+    height: 120px !important;
+    width: auto !important;
+    max-width: 120px !important;
+}
+
+.brand-link .brand-image {
+    height: 120px !important;
+    width: auto !important;
+    max-width: 120px !important;
+}
+
+/* Force logo size in all contexts */
+img[src*="gtsu.png"] {
+    height: 120px !important;
+    width: auto !important;
+    max-width: 120px !important;
+    max-height: 120px !important;
+}

@@ -1,0 +1,625 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block extra_css %}
+<style>
+    :root {
+        --primary-blue: #1a4b84;
+        --light-blue: #e8f1f8;
+        --medium-blue: #3478c5;
+    }
+
+    /* Global styles */
+    body {
+        color: var(--primary-blue);
+    }
+
+    .custom-btn {
+        background-color: var(--primary-blue);
+        color: white;
+    }
+
+    .custom-btn:hover {
+        background-color: var(--medium-blue);
+        color: white;
+    }
+
+    /* Hero section */
+    .carousel-caption {
+        background: rgba(26, 75, 132, 0.85) !important;
+    }
+
+    /* Featured blocks */
+    .featured-block {
+        background-color: white;
+        border: 1px solid var(--light-blue);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .featured-block:hover {
+        background-color: var(--light-blue);
+        transform: translateY(-5px);
+    }
+
+    .featured-block-text {
+        color: var(--primary-blue);
+    }
+
+    /* Section styling */
+    .section-padding {
+        background-color: white;
+    }
+
+    .section-padding:nth-child(even) {
+        background-color: var(--light-blue);
+    }
+
+    /* Custom elements */
+    .about-section {
+        background-color: white;
+    }
+
+    /* About section styles */
+    .about-image-container {
+        padding: 20px;
+    }
+
+    .about-image {
+        box-shadow: 0 0 20px rgba(26, 75, 132, 0.1);
+    }
+
+    .custom-list li:before {
+        color: var(--primary-blue);
+    }
+
+    /* Navigation */
+    .navbar {
+        background-color: var(--primary-blue) !important;
+    }
+
+    .nav-link {
+        color: white !important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--light-blue) !important;
+    }
+
+    .navbar-brand {
+        color: white !important;
+    }
+
+    .navbar-toggler-icon {
+        filter: brightness(0) invert(1);
+    }
+
+    .dropdown-menu {
+        background-color: var(--primary-blue);
+        border-color: var(--light-blue);
+    }
+
+    .dropdown-item {
+        color: white !important;
+    }
+
+    .dropdown-item:hover {
+        background-color: var(--medium-blue);
+        color: var(--light-blue) !important;
+    }
+
+    footer {
+        background-color: var(--primary-blue) !important;
+        color: white !important;
+    }
+
+    /* Images and icons */
+    .featured-block-image {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 20px;
+        filter: invert(23%) sepia(29%) saturate(1022%) hue-rotate(182deg) brightness(97%) contrast(88%);
+    }
+
+    /* Card styles */
+    .card {
+        border-color: var(--light-blue);
+    }
+
+    .card:hover {
+        border-color: var(--primary-blue);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--primary-blue);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+            <section class="hero-section hero-section-full-height">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12 p-0">
+                            <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{% static 'images/slide/eudcation.jpg' %}" class="carousel-image img-fluid" alt="GTSU - Empowering Through Education">
+                                        
+                                        <div class="carousel-caption d-flex flex-column justify-content-end" style="background: rgba(0, 0, 0, 0.6); padding: 2rem; border-radius: 8px;">
+                                            <h1>Global Tibetan Student Union</h1>
+                                            
+                                            <p>Empowering students through unity, education, and motivation since 2016</p>
+                                        </div>
+                                    </div>                                    <div class="carousel-item">
+                                        <img src="{% static 'images/slide/unity.jpg' %}" class="carousel-image img-fluid" alt="Unity is Strength">
+                                        
+                                        <div class="carousel-caption d-flex flex-column justify-content-end" style="background: rgba(0, 0, 0, 0.6); padding: 2rem; border-radius: 8px;">
+                                            <h1>Unity is Strength</h1>
+                                            
+                                            <p>Building a global community of Tibetan students since 2016</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/slide/motivation.jpg' %}" class="carousel-image img-fluid" alt="Student Guidance">
+                                        
+                                        <div class="carousel-caption d-flex flex-column justify-content-end" style="background: rgba(0, 0, 0, 0.6); padding: 2rem; border-radius: 8px;">
+                                            <h1>Student Guidance</h1>
+                                            
+                                            <p>Supporting +2 graduates with academic and career counseling</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+
+                                <button class="carousel-control-next" type="button" data-bs-target="#hero-slide" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About GTSU Section -->
+            <section class="section-padding about-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-12 mb-6 mb-lg-0">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 60%; padding: 30px;">
+                                <img src="{% static 'images/image1.png' %}" 
+                                     style="max-width: 100%; height: auto; object-fit: contain; border-radius: 20px; box-shadow: 0 0 20px rgba(26, 75, 132, 0.1);" 
+                                     alt="GTSU">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="about-content">
+                                <h2 class="mb-4">Our Origins</h2>
+                                
+                                <p>The journey of GTSU began with a voluntary initiative called "Let's Open the Door to College" in 2016. This grassroots movement was started by Tibetan college students across India who recognized the challenges faced by +2 graduates in choosing suitable academic paths.</p>
+                                
+                                <p>Through modern digital platforms, our team of students from India and the USA provided guidance to over 700 students within just two months, helping them make informed academic and career choices.</p>
+                                
+                                <h3 class="mt-4 mb-3">Our Mission</h3>
+                                <p>GTSU stands on three fundamental pillars:</p>
+                                <ul class="custom-list">
+                                    <li><strong>Unity:</strong> Building strength through community</li>
+                                    <li><strong>Education:</strong> Advancing knowledge and skills</li>
+                                    <li><strong>Motivation:</strong> Inspiring positive change</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-10 col-12 text-center mx-auto">
+                            <h2 class="mb-5">Welcome to Global Tibetan Student Union (GTSU)</h2>
+                            <p class="mb-4">Founded on July 6th, 2016, GTSU is dedicated to supporting and connecting Tibetan students worldwide through education, unity, and motivation.</p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                            <div class="featured-block d-flex justify-content-center align-items-center">
+                                <a href="{% url 'about' %}" class="d-block">
+                                    <img src="{% static 'images/icons/hands.png' %}" class="featured-block-image img-fluid" alt="">
+
+                                    <p class="featured-block-text">Join <strong>GTSU</strong></p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
+                            <div class="featured-block d-flex justify-content-center align-items-center">
+                                <a href="#" class="d-block">
+                                    <img src="{% static 'images/icons/receive.png' %}" class="featured-block-image img-fluid" alt="">
+                                    <p class="featured-block-text"><strong>Unity</strong> & Strength</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
+                            <div class="featured-block d-flex justify-content-center align-items-center">
+                                <a href="#" class="d-block">
+                                    <img src="{% static 'images/icons/heart.png' %}" class="featured-block-image img-fluid" alt="">
+                                    <p class="featured-block-text"><strong>Career</strong> Guidance</p>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding section-bg" id="section_2">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                            <img src="{% static 'images/group.jpg'%}" class="custom-text-box-image img-fluid" alt="">
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="custom-text-box">
+                                <h2 class="mb-2">Our Story</h2>
+
+                                <h5 class="mb-3">Kind Heart Charity, Non-Profit Organization</h5>
+
+                                <p class="mb-0">This is a Bootstrap 5.2.2 CSS template for charity organization websites. You can feel free to use it. Please tell your friends about TemplateMo website. Thank you. HTML CSS files updated on 20 Oct 2022.</p>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="custom-text-box mb-lg-0">
+                                        <h5 class="mb-3">Our Mission</h5>
+
+                                        <p>Sed leo nisl, posuere at molestie ac, suscipit auctor quis metus</p>
+
+                                        <ul class="custom-list mt-2">
+                                            <li class="custom-list-item d-flex">
+                                                <i class="bi-check custom-text-box-icon me-2"></i>
+                                                Charity Theme
+                                            </li>
+
+                                            <li class="custom-list-item d-flex">
+                                                <i class="bi-check custom-text-box-icon me-2"></i>
+                                                Semantic HTML
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
+                                        <div class="counter-thumb"> 
+                                            <div class="d-flex">
+                                                <span class="counter-number" data-from="1" data-to="2009" data-speed="1000"></span>
+                                                <span class="counter-number-text"></span>
+                                            </div>
+
+                                            <span class="counter-text">Founded</span>
+                                        </div> 
+
+                                        <div class="counter-thumb mt-4"> 
+                                            <div class="d-flex">
+                                                <span class="counter-number" data-from="1" data-to="120" data-speed="1000"></span>
+                                                <span class="counter-number-text">B</span>
+                                            </div>
+
+                                            <span class="counter-text">Donations</span>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="about-section section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-5 col-12">
+                            <img src="{%static 'images/portrait-volunteer-who-organized-donations-charity.jpg'  %}" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
+                        </div>
+
+                        <div class="col-lg-5 col-md-7 col-12">
+                            <div class="custom-text-block">
+                                <h2 class="mb-0">Tenzin Choyang</h2>
+
+                                <p class="text-muted mb-lg-4 mb-md-4">President</p>
+
+                                <p>GTSU grew from a student-led initiative rooted in unity, guidance, and service, supporting hundreds of students in making informed academic and career choices. Guided by our core pillars of Unity, Education, and Motivation, we remain committed to empowering students, strengthening our community, and inspiring positive change through collective effort and shared purpose.</p>
+
+                                <ul class="social-icon mt-4">
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-twitter"></a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-facebook"></a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-instagram"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section section-padding section-bg">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center">
+
+                        <div class="col-lg-5 col-12 ms-auto">
+                            <h2 class="mb-0">Make an impact. <br> Save lives.</h2>
+                        </div>
+
+                        <div class="col-lg-5 col-12">
+                            <a href="#" class="me-4">Make a donation</a>
+
+                            <a href="#section_4" class="custom-btn btn smoothscroll">Become a volunteer</a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="section-padding" id="section_3">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12 text-center mb-4">
+                            <h2>Our Causes</h2>
+                        </div>
+
+                        {% for cause in causes %}
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                            <div class="custom-block-wrap">
+                                <img src="{{cause.img.url}}" class="custom-block-image img-fluid" alt="">
+
+                                <div class="custom-block">
+                                    <div class="custom-block-body">
+                                        <h5 class="mb-3">{{cause.name}}</h5>
+
+                                        <p>{{cause.detail}}</p>
+
+                                        <div class="d-flex align-items-center my-2">
+                                            <p class="mb-0">
+                                                <strong>Raised:</strong>
+                                                ₹ {{cause.raised}}
+                                            </p>
+
+                                            <p class="ms-auto mb-0">
+                                                <strong>Goal:</strong>
+                                                ₹ {{cause.goal}}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <a href="/donate/{{cause.id}}" class="custom-btn btn">Donate now</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="volunteer-section section-padding" id="section_4">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12">
+                            <h2 class="text-white mb-4">Volunteer</h2>
+
+                            <form class="custom-form volunteer-form mb-5 mb-lg-0" action="/submit-valunteer/" method="post">
+                                {% csrf_token %}
+                                <h3 class="mb-4">Become a volunteer today</h3>
+
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="name" id="volunteer-name" class="form-control" placeholder="Your Name" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-12">    
+                                        <input type="email" name="email" id="volunteer-email" class="form-control" placeholder="Enter Your Email" required>
+                                    </div>
+                                    
+                                </div>
+                                <input type="text" name="subject" rows="3" id="volunteer-subject" class="form-control" placeholder="Subject" required>
+
+                                <input type="text" name="college_name" id="college-name" class="form-control" placeholder="College/Company Name" required>
+
+                                <input type="text" name="preprofessional" id="preprofessional" class="form-control" placeholder="Preprofessional" required>
+
+                                <textarea name="message" rows="3" class="form-control" id="volunteer-message" placeholder="Comment (Optional)"></textarea>
+
+                                <input type="submit" class="form-control" value="Submit" style="background: #5a6f80;color: white;">
+                            </form>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <img src="{% static 'images/smiling-casual-woman-dressed-volunteer-t-shirt-with-badge.jpg'%}" class="volunteer-image img-fluid" alt="">
+
+                            <div class="custom-block-body text-center">
+                                <h4 class="text-white mt-lg-3 mb-lg-3">About Volunteering</h4>
+
+                                <p class="text-white">Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito Professional charity theme based</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="testimonial-section section-padding section-bg">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-8 col-12 mx-auto">
+                            <h2 class="mb-lg-3">Happy Customers</h2>
+                            
+                                <div id="testimonial-carousel" class="carousel carousel-fade slide" data-bs-ride="carousel">
+
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                           <div class="carousel-caption">
+                                                <h4 class="carousel-title">Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito charity theme</h4>
+
+                                                <small class="carousel-name"><span class="carousel-name-title">Maria</span>, Boss</small>
+                                           </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="carousel-caption">
+                                                <h4 class="carousel-title">Sed leo nisl, posuere at molestie ac, suscipit auctor mauris quis metus tempor orci</h4>
+
+                                                <small class="carousel-name"><span class="carousel-name-title">Thomas</span>, Partner</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="carousel-caption">
+                                                <h4 class="carousel-title">Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito charity theme</h4>
+
+                                                <small class="carousel-name"><span class="carousel-name-title">Jane</span>, Advisor</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="carousel-caption">
+                                                <h4 class="carousel-title">Sed leo nisl, posuere at molestie ac, suscipit auctor mauris quis metus tempor orci</h4>
+
+                                                <small class="carousel-name"><span class="carousel-name-title">Bob</span>, Entreprenuer</small>
+                                           </div>
+                                        </div>
+
+                                          <ol class="carousel-indicators">
+                                               <li data-bs-target="#testimonial-carousel" data-bs-slide-to="0" class="active">
+                                                    <img src="{% static 'images/avatar/portrait-beautiful-young-woman-standing-grey-wall.jpg'%}" class="img-fluid rounded-circle avatar-image" alt="avatar">
+                                               </li>
+
+                                               <li data-bs-target="#testimonial-carousel" data-bs-slide-to="1" class="">
+                                                    <img src="{% static 'images/avatar/portrait-young-redhead-bearded-male.jpg'%}" class="img-fluid rounded-circle avatar-image" alt="avatar">
+                                               </li>
+
+                                               <li data-bs-target="#testimonial-carousel" data-bs-slide-to="2" class="">
+                                                    <img src="{% static 'images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg'%}" class="img-fluid rounded-circle avatar-image" alt="avatar">
+                                               </li>
+
+                                               <li data-bs-target="#testimonial-carousel" data-bs-slide-to="3" class="">
+                                                    <img src="{% static 'images/avatar/studio-portrait-emotional-happy-funny.jpg'%}" class="img-fluid rounded-circle avatar-image" alt="avatar">
+                                               </li>
+                                          </ol>
+
+                                 </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="contact-section section-padding" id="section_6">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
+                            <div class="contact-info-wrap">
+                                <h2>Get in touch</h2>
+
+                                <div class="contact-image-wrap d-flex flex-wrap">
+                                    <img src="{% static 'images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg'%}" class="img-fluid avatar-image" alt="">
+
+                                    <div class="d-flex flex-column justify-content-center ms-3">
+                                        <p class="mb-0">Clara Barton</p>
+                                        <p class="mb-0"><strong>HR & Office Manager</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-info">
+                                    <h5 class="mb-3">Contact Infomation</h5>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-geo-alt me-2"></i>
+                                        Akershusstranda 20, 0150 Oslo, Norway
+                                    </p>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-telephone me-2"></i>
+
+                                        <a href="tel: 120-240-9600">
+                                            120-240-9600
+                                        </a>
+                                    </p>
+
+                                    <p class="d-flex">
+                                        <i class="bi-envelope me-2"></i>
+
+                                        <a href="mailto:info@yourgmail.com">
+                                            donate@charity.org
+                                        </a>
+                                    </p>
+
+                                    <a href="#" class="custom-btn btn mt-3">Get Direction</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-12 mx-auto">
+                            <form class="custom-form contact-form" action="/contact/" method="post" role="form">
+                                {% csrf_token %}
+                                <h2>Contact form</h2>
+
+                                <p class="mb-4">Or, you can just send an email:
+                                    <a href="#">info@charity.org</a>
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="text" name="f_name" id="first-name" class="form-control" placeholder="Your Name" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="text" name="l_name" id="last-name" class="form-control" placeholder="Last Name" required>
+                                    </div>
+                                </div>
+
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Enter Your Email" required>
+
+                                <textarea name="message" rows="5" class="form-control" id="message" placeholder="What can we help you?"></textarea>
+
+                                <input type="submit" class="form-control" value="Send Message" style="background: #5a6f80;color: white;">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+{% endblock %}
