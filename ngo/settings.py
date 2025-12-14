@@ -29,7 +29,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['www.gtsu.in', 'gtsu.in', 'lobsang208lt.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 # CSRF Trusted Origins for PythonAnywhere
-CSRF_TRUSTED_ORIGINS = ['https://www.gtsu.in', 'https://gtsu.in', 'https://lobsang208lt.pythonanywhere.com']
+CSRF_TRUSTED_ORIGINS = ['https://www.gtsu.in', 'https://gtsu.in', 'webapp-2874787.pythonanywhere.com']
 
 
 # Application definition
