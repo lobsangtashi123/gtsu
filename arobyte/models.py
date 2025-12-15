@@ -21,23 +21,7 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
-class Cause(models.Model):
-    name=models.CharField(max_length=30)
-    img=models.ImageField()
-    detail=models.CharField(max_length=500)
-    raised=models.FloatField()
-    goal=models.FloatField()
 
-    def __str__(self):
-        return self.name
-
-class Donate(models.Model):
-    name=models.CharField(max_length=30)
-    email=models.CharField(max_length=30)
-    amount=models.FloatField()
-
-    def __str__(self):
-        return self.name
 
 class Blog(models.Model):
     title = models.CharField(max_length=200)
