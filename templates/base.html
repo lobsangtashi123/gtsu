@@ -38,23 +38,15 @@
                     <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
                         <ul class="social-icon">
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-twitter"></a>
+                                <a href="https://www.facebook.com/GTSU2016/" target="_blank" class="social-icon-link bi-facebook"></a>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-facebook"></a>
+                                <a href="https://www.instagram.com/globaltibetanstudentunion/" target="_blank" class="social-icon-link bi-instagram"></a>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-instagram"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-youtube"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-whatsapp"></a>
+                                <a href="https://www.youtube.com/@GlobalTibetanStudentUnion" target="_blank" class="social-icon-link bi-youtube"></a>
                             </li>
                         </ul>
                     </div>
@@ -100,7 +92,7 @@
                             <a class="nav-link {% if request.path == '/volunteer/' %}active{% endif %}" href="{% url 'volunteer' %}">Volunteer</a>
                         </li>
                         <li class="nav-item ms-3">
-                            <a class="nav-link custom-btn custom-border-btn btn" href="{% url 'causes' %}">Donate</a>
+                            <a class="nav-link custom-btn custom-border-btn btn" href="#" data-bs-toggle="modal" data-bs-target="#donateModal">Donate</a>
                         </li>
                     </ul>
                 </div>
@@ -174,23 +166,15 @@
                         <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
                             <ul class="social-icon">
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-twitter"></a>
+                                    <a href="https://www.facebook.com/GTSU2016/" target="_blank" class="social-icon-link bi-facebook"></a>
                                 </li>
 
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-facebook"></a>
+                                    <a href="https://www.instagram.com/globaltibetanstudentunion/" target="_blank" class="social-icon-link bi-instagram"></a>
                                 </li>
 
                                 <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-instagram"></a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-linkedin"></a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-youtube"></a>
+                                    <a href="https://www.youtube.com/@GlobalTibetanStudentUnion" target="_blank" class="social-icon-link bi-youtube"></a>
                                 </li>
                             </ul>
                         </div>
@@ -198,6 +182,34 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Donate Modal -->
+        <div class="modal fade" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="donateModalLabel">Support GTSU</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="mb-3">Thank you for your interest in supporting GTSU! Currently, we accept donations through bank transfer or direct contact.</p>
+                        
+                        <h6 class="mb-2">Contact Information:</h6>
+                        <p class="mb-2">
+                            <strong>Email:</strong> <a href="mailto:gtsu2016@gmail.com">gtsu2016@gmail.com</a>
+                        </p>
+                        
+                        <div class="alert alert-info mt-3">
+                            <small><i class="bi bi-info-circle"></i> Please email us for bank account details and donation instructions. All donations go directly to supporting Tibetan students' education.</small>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="mailto:gtsu2016@gmail.com" class="btn btn-primary">Email Us</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- JAVASCRIPT FILES -->
         <script src="{% static 'js/jquery.min.js' %}"></script>
