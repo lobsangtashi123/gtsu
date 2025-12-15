@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Volunteer, Contact, Cause, Donate, Blog, Announcement
+from .models import Volunteer, Contact, Blog, Announcement
 from django.http import HttpResponse
 from django.urls import path
 from django.shortcuts import redirect
@@ -83,7 +83,5 @@ class VolunteerAdmin(admin.ModelAdmin):
 
 admin.site.register(Volunteer, VolunteerAdmin)
 admin.site.register(Contact)
-admin.site.register(Cause)
-admin.site.register(Donate)
 admin.site.register(Blog)
 admin.site.register(Announcement, AnnouncementAdmin)
