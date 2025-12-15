@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Volunteer, Contact, Cause, Donate, Blog, Announcement
+from .models import Volunteer, Contact, Blog, Announcement
 from django.utils import timezone
 from django.db.models import Q
 from django.contrib import messages
@@ -10,8 +10,7 @@ from datetime import datetime
 
 # Create your views here.
 def index(request):
-    causes=Cause.objects.all()
-    return render(request,'index.html',{"causes":causes})
+    return render(request,'index.html')
 
 def submit_valunteer(request):
     if request.method =="POST":
@@ -57,22 +56,7 @@ def volunteer(request):
         return redirect('/volunteer/')
     return render(request, 'volunteer.html')
 
-def donate(request,id):
-    if request.method =="POST":
-        name=request.POST['name']
-        email=request.POST['email']
-        amount=request.POST.get('amount')
 
-        cause=Cause.objects.get(id=id)
-        cause.raised=cause.raised+float(amount)
-        cause.goal=cause.goal-float(amount)
-        cause.save()
-        donation=Donate.objects.create(name=name,email=email,amount=float(amount))
-        donation.save()
-        return redirect('/')
-    else:
-        cause=Cause.objects.get(id=id)
-        return render(request,'donate.html',{"cause":cause})
 
 def blog_list(request):
     blogs = Blog.objects.all()
@@ -85,9 +69,7 @@ def blog_detail(request, id):
 def about(request):
     return render(request, 'about.html')
 
-def causes(request):
-    causes = Cause.objects.all()
-    return render(request, 'causes.html', {'causes': causes})
+
 
 def announcement_list(request):
     today = timezone.now().date()
